@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- SOURCE THAT HOSTS PROJECT NEEDS THIS -->
+    <script type='text/javascript' src='https://cdt.ca.gov/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+    <script type='text/javascript' src='https://cdt.ca.gov/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' id='dashicons-css'  href='https://cdt.ca.gov/wp-includes/css/dashicons.min.css?ver=4.9.9' type='text/css' media='all' />
+    <link rel='stylesheet' id='thickbox-css'  href='https://cdt.ca.gov/wp-includes/js/thickbox/thickbox.css?ver=4.9.9' type='text/css' media='all' />
+    <link rel='stylesheet' id='feedzy-rss-feeds-css'  href='https://cdt.ca.gov/wp-content/plugins/feedzy-rss-feeds/css/feedzy-rss-feeds.css?ver=3.3.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='ce_responsive-css'  href='https://cdt.ca.gov/wp-content/plugins/simple-embed-code/css/video-container.min.css?ver=4.9.9' type='text/css' media='all' />
+    <link rel='stylesheet' id='parent-style-css'  href='https://cdt.ca.gov/wp-content/themes/Divi/style.css?ver=4.9.9' type='text/css' media='all' />
+    <link rel='stylesheet' id='divi-style-css'  href='https://cdt.ca.gov/wp-content/themes/CAWeb/style.css?ver=3.17.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='tablepress-default-css'  href='https://cdt.ca.gov/wp-content/uploads/tablepress-combined.min.css?ver=46' type='text/css' media='all' />
+    <link rel='stylesheet' id='caweb-core-style-css'  href='https://cdt.ca.gov/wp-content/themes/CAWeb/css/version5/cagov.core.css?ver=1.4.10' type='text/css' media='all' />
+    <link rel='stylesheet' id='caweb-color-style-css'  href='https://cdt.ca.gov/wp-content/themes/CAWeb/css/version5/colorscheme/oceanside.css?ver=1.4.10' type='text/css' media='all' />
+    <link rel='stylesheet' id='caweb-module-style-css'  href='https://cdt.ca.gov/wp-content/themes/CAWeb/css/modules.css?ver=1.4.10' type='text/css' media='all' />
+    <link rel='stylesheet' id='caweb-font-style-css'  href='https://cdt.ca.gov/wp-content/themes/CAWeb/css/cagov.font-only.css?ver=1.4.10' type='text/css' media='all' />
+    <link rel='stylesheet' id='caweb-custom-style-css'  href='https://cdt.ca.gov/wp-content/themes/CAWeb/css/custom.css?ver=1.4.10' type='text/css' media='all' />
+    <link rel='stylesheet' id='caweb-custom-version-style-css'  href='https://cdt.ca.gov/wp-content/themes/CAWeb/css/version5/custom.css?ver=1.4.10' type='text/css' media='all' />
+    <script type='text/javascript' defer src='https://cdt.ca.gov/wp-content/themes/CAWeb/js/libs/modernizr-3.6.0.min.js?ver=1.4.10'></script>
+    <link rel='https://api.w.org/' href='https://cdt.ca.gov/wp-json/' />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cdt.ca.gov/xmlrpc.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://cdt.ca.gov/wp-includes/wlwmanifest.xml" /> 
+    <meta name="generator" content="CDT" />
+    <link rel="canonical" href="https://cdt.ca.gov/account-lead-lookup/" />
+    <link rel='shortlink' href='https://cdt.ca.gov/?p=53300' />
+    <link rel="alternate" type="application/json+oembed" href="https://cdt.ca.gov/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcdt.ca.gov%2Faccount-lead-lookup%2F" />
+    <link rel="alternate" type="text/xml+oembed" href="https://cdt.ca.gov/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcdt.ca.gov%2Faccount-lead-lookup%2F&#038;format=xml" />
+</head>
+<body>
+
+<style>
+    body {
+        background: #666;
+    }
+
+    #account-lead-lookup {
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    </style>
+
+    <!-- SOURCE THAT HOSTS PROJECT NEEDS THIS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    
+    <link rel='stylesheet' href='./account-lead-lookup.css' type='text/css' media='all' />
+    <script src="./account-lead-lookup.js"></script>
+
+    <div id="account-lead-lookup">
+        <div id="account-lead-lookup--search">
+            <select data-placeholder="Select a Department..." class="chosen-select">
+                <option value=""></option>
+            </select>
+        </div>
+    
+        <div id="account-lead-lookup--content" class="m-t-md hidden">
+            <p>Customer Engagement Services Account Lead for
+                <br />
+                <strong data-lookup-id="dept"></strong>
+            </p>
+            <hr>
+            
+            <div class="account-lead-lookup--content-details">
+                <img src="" alt="" data-lookup-id="img" class="img-thumbnail">
+                
+                <div>
+                    <strong data-lookup-id="name"></strong>
+                    <a data-lookup-id="email" href=""></a>
+                    <a data-lookup-id="phone" href=""></a>      
+                </div>
+            </div>
+        </div>
+
+        <div id="account-lead-lookup--loading" class="account-lead-lookup--centered">
+            <div>Loading...</div>
+        </div>
+
+        <div id="account-lead-lookup--error" class="account-lead-lookup--centered hidden">
+            <div class="text-center">
+                <h3>Sorry, something went wrong!</h3>
+                <div data-lookup-id="error-message"></div>
+                <button data-lookup-id="error-button" class="btn btn-default m-y-md">Retry</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+</html>

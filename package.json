@@ -1,0 +1,26 @@
+{
+  "name": "account-lead-lookup",
+  "version": "0.0.1",
+  "description": "CDT website's Account Lead Lookup tool",
+  "main": "account-lead-lookup.js",
+  "scripts": {
+    "prestart": "rimraf dist",
+    "start": "parcel index.html -p 3000 --https",
+    "prebuild": "rimraf dist",
+    "build": "parcel build index.html",
+    "postbuild": "node ./scripts/removeHash.js",
+    "serve": "serve -s dist -p 3000 --ssl",
+    "deploy": "bpa-azure deploy",
+    "deploy:prod": "bpa-azure deploy --prod"
+  },
+  "author": "BPA",
+  "license": "ISC",
+  "devDependencies": {
+    "bpa-azure-test": "0.0.1",
+    "parcel-bundler": "^1.12.3",
+    "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "whatwg-fetch": "^3.0.0"
+  }
+}
