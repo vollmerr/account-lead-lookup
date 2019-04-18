@@ -5,9 +5,9 @@
   "main": "account-lead-lookup.js",
   "scripts": {
     "prestart": "rimraf dist",
-    "start": "parcel index.html -p 3000 --https",
+    "start": "env-cmd .env.dev parcel index.html -p 3000 --https",
     "prebuild": "rimraf dist",
-    "build": "parcel build index.html",
+    "build": "env-cmd .env.prod parcel build index.html",
     "postbuild": "node ./scripts/removeHash.js",
     "serve": "serve -s dist -p 3000 --ssl",
     "deploy": "bpa-azure deploy",
@@ -17,6 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "bpa-azure-test": "0.0.1",
+    "env-cmd": "^8.0.2",
     "parcel-bundler": "^1.12.3",
     "rimraf": "^2.6.3"
   },

@@ -106,14 +106,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // get records then process them
     const run = () => {
         const options = { headers: { 'Content-Type': 'application/json' } };
+        const account = process.env.DEPLOY_ACCOUNT;
+        const container = process.env.DEPLOY_CONTAINER;
 
-        fetch('https://devodisharedstore01.blob.core.windows.net/account-lead-lookup/all.json', options)
+        fetch(`https://${account}.blob.core.windows.net/${container}/all.json`, options)
             .then(res => res.json())
             .then(res => accountLeadLookup(res.records))
             .catch(setError)
     };
 
-    
     run();
 
     // const testRun = () => {
