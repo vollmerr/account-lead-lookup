@@ -14,7 +14,7 @@ Use `npm run start` to start the project at http://localhost:3000/.
 ## Building
 This project uses the [parcel bundler](https://github.com/parcel-bundler/parcel) to bundle to perform several actions such as transpiling, minification, and uglification.
 
-Use `npm run build` to build the project. The output will placed in the `/dist` folder. To deploy, place the contents of this build into the Azure blob storage the CDT site is pointing to.
+Use `npm run build` to build the project. The output will placed in the `/dist` folder.
 
 For running locally, use a file serving system such as [serve](https://github.com/zeit/serve). After building, run `serve -s dist`.
 
@@ -27,4 +27,4 @@ This project uses the `bpa-azure` package for deploying to Azure Blob Storage, w
 
 To setup the environment for deployment copy the `.env.sample` to `.env.dev` and `.env.prod`, then fill out the corresponding variables
 
-To run deployments, use `npm run deploy` for deploying to dev and `npm run deploy:prod` for producation.
+To run deployments, use `npm run deploy` for deploying to dev and `npm run deploy:prod` for production.
