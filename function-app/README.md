@@ -12,10 +12,12 @@ Note: All az commands are typed in PowerShell ISE.
 6. Replace all.json file in Azure Blob Storage.
 
 ## Environment Variables
-Note: Make sure to do an `az login` and `az account set --subscription <azure_subscription_id>` to wire up to the correct Azure subscription before running these commands.
+Note: Make sure to do an `az login` and `az account set --subscription <azure_subscription_id>` to login to Azure and wire up to the correct Azure subscription before running any Azure CLI (az) commands.
 
 List: `az functionapp config appsettings list --name <function_app_name> --resource-group <function_app_resource_group>`
 Set: `az functionapp config appsettings set --name <function_app_name> --resource-group <function_app_resource_group> --settings <name=value>`
+
+Important: If deploying to fresh infrastructure, the "WEBSITE_RUN_FROM_PACKAGE" environmental variable must be set to 1 for the zip deployment method (detailed below) to work correctly.
 
 ## Environment information (Updated: 4/18/19)
 ### Dev
@@ -33,4 +35,6 @@ function_app_name - FA-CDT-ALL-P-001
 1. Install Azure CLI on Windows:  https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest.
 2. `az login`
 3. `az account set --subscription <azure_subscription_id>`
-4. `az functionapp deployment source config-zip -n <function_app_name> -g <function_app_resource_group> --src <path_to_zip>`
+4. `npm install` in function-app folder.
+5. Create a zip file named account-lead-lookup.zip of all files in the function-app folder (including the node_modules folder).
+6. `az functionapp deployment source config-zip -n <function_app_name> -g <function_app_resource_group> --src <path_to_zip>`
