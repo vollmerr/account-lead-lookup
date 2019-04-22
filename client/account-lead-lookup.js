@@ -1,4 +1,6 @@
 import 'whatwg-fetch'; // fetch support for old browsers
+
+import withAccessibility from './accessibility';
 // import testRecords from './ignore/testRecords';
 
 /**
@@ -45,6 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
         buildOptions($select, records);
         // initialize dropdown using chosen.js
         $select.chosen({ width: "100%" });
+        // accessibility fixes, not currently in chosen (v1.8.7) - watch for updates that add this in...
+        withAccessibility($);
         // populate records info on click
         $select.change((event) => {
             const { value } = event.target;
@@ -70,10 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 const $email = $('[data-lookup-id=email]');
                 $email.attr('href', `mailto:${email}`);
+                $email.attr('aria-label', `email: ${email}`);
                 $email.text(email);
                 
                 const $phone = $('[data-lookup-id=phone]');
                 $phone.attr('href', `tel:${phone}`);
+                $phone.attr('aria-label', `phone: ${phone}`);
                 $phone.text(phone);
 
                 showContent();

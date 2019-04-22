@@ -5,8 +5,8 @@
   "main": "account-lead-lookup.js",
   "scripts": {
     "clean": "rimraf dist",
-    "start": "cross-env npm run clean && env-cmd .env.dev parcel index.html -p 3000 --https",
-    "start:prod": "cross-env npm run clean && env-cmd .env.prod parcel index.html -p 3000 --https",
+    "start": "env-cmd .env.dev parcel index.html -p 3000 --https",
+    "start:prod": "env-cmd .env.prod parcel index.html -p 3000 --https",
     "build": "cross-env npm run clean && env-cmd .env.dev parcel build index.html && npm run remove-hash",
     "build:prod": "cross-env npm run clean && env-cmd .env.prod parcel build index.html && npm run remove-hash",
     "serve": "serve -s dist -p 3000 --ssl",

@@ -16,11 +16,13 @@ This project uses the [parcel bundler](https://github.com/parcel-bundler/parcel)
 
 Use `npm run build` to build the project. The output will placed in the `/dist` folder.
 
-For running locally, use a file serving system such as [serve](https://github.com/zeit/serve). After building, run `serve -s dist`.
+For running locally, use a file serving system such as [serve](https://github.com/zeit/serve). After building, run `npm run serve`.
 
 ## Deploying
 ### html
-To deploy the html to the wordpress environment, open a ticket to the `OCIO ITSM Services/CDT Website Support` group. The code indicated in index.html surrounded by `INSERT INTO THE HOST SITE` is the code that should be replaced on the CDT site if any changes are needed.
+To deploy the html to the wordpress environment open a ticket to the `OCIO ITSM Services/CDT Website Support` group. 
+
+The code indicated in `index.html` surrounded by `INSERT INTO THE HOST SITE` is the code that should be replaced on the CDT site if any changes are needed. Uncomment the dev or prod script and link section that points to the js/css files in Azure Blob Storage, for example the section under the `UNCOMMENT FOR DEPLOYING IN PROD` comment.
 
 ### javascript + css
 This project uses the `bpa-azure` package for deploying to Azure Blob Storage, which relies on environment variables being set. 

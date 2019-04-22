@@ -51,20 +51,28 @@
 
     </style>
 
-    <!-- needed before lookup code, so also delacred up here.. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
-    
     <link rel='stylesheet' href='./account-lead-lookup.css' type='text/css' media='all' />
     <script src="./account-lead-lookup.js"></script>
 
 
-
 <!-- INSERT INTO THE HOST SITE -->
+
+    <!-- UNCOMMENT THE SCRIPTS BELOW WHEN INSERTING IN THE HOST SITE -->
+
+    <!-- UNCOMMENT FOR DEPLOYING IN DEV -->
+    <!-- <link rel='stylesheet' href='https://devodisharedstore01.blob.core.windows.net/account-lead-lookup/account-lead-lookup.css' type='text/css' media='all' />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <script src="https://devodisharedstore01.blob.core.windows.net/account-lead-lookup/account-lead-lookup.js"></script> -->
+
+    <!-- UNCOMMENT FOR DEPLOYING IN PROD -->
+    <!-- <link rel='stylesheet' href='https://prododisharedstore01.blob.core.windows.net/account-lead-lookup/account-lead-lookup.css' type='text/css' media='all' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <script src="https://prododisharedstore01.blob.core.windows.net/account-lead-lookup/account-lead-lookup.js"></script> -->
 
     <div id="account-lead-lookup">
         <div id="account-lead-lookup--search">
-            <select data-placeholder="Select a Department..." class="chosen-select">
+            <select aria-label="Select a Department" data-placeholder="Select a Department..." class="chosen-select" aria-hidden="true">
                 <option value=""></option>
             </select>
         </div>
@@ -79,8 +87,9 @@
             <div class="account-lead-lookup--content-details">
                 <img src="" alt="" data-lookup-id="img" class="img-thumbnail">
                 
+
                 <div>
-                    <strong data-lookup-id="name"></strong>
+                    <strong data-lookup-id="name" tabindex="0"></strong>
                     <a data-lookup-id="email" href=""></a>
                     <a data-lookup-id="phone" href=""></a>      
                 </div>
