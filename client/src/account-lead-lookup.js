@@ -45,10 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const recordsById = buildRecordMap(records);
         // build list of options for chosen.js to build from
         buildOptions($select, records);
+        $select.on('chosen:ready', () => {
+            // trigger open then close to populate list...
+            $select.trigger('chosen:open');
+            $select.trigger('chosen:close');
+            // accessibility fixes, not currently in chosen (v1.8.7) - watch for updates that add this in...
+            withAccessibility($);
+        })
         // initialize dropdown using chosen.js
         $select.chosen({ width: "100%" });
-        // accessibility fixes, not currently in chosen (v1.8.7) - watch for updates that add this in...
-        withAccessibility($);
         // populate records info on click
         $select.change((event) => {
             const { value } = event.target;

@@ -8,10 +8,12 @@ const withAccessibility = ($) => {
 
     // add aria elements to the search input box
     $input.attr('role', 'combobox');
-    $input.attr('aria-owns', 'account-lead-lookup--search-results');
+    $input.attr('spellcheck', 'false')
+    $input.attr('aria-controls', 'account-lead-lookup--search-results');
     $input.attr('aria-autocomplete', 'list');
     $input.attr('aria-label', 'Select a Department');
-
+    $input.attr('aria-expanded', 'false');
+    
     $input.on('keydown', () => {
         const $options = $('.chosen-results .active-result');
         // add attributes to each individual option in the list of options
@@ -19,16 +21,19 @@ const withAccessibility = ($) => {
             const $option = $(option);
             $option.attr('id', `account-lead-lookup--search-results-${i}`);
             $option.attr('role', 'option');
+            $option.attr('aria-selected', 'false');
         });
 
-        const id = $('.chosen-results .active-result.highlighted').attr('id');
-        $input.attr('aria-activedescendant', id);
+        const $selectedOption = $('.chosen-results .active-result.highlighted');
+        $selectedOption.attr('aria-selected', 'true');
+        $input.attr('aria-activedescendant', $selectedOption.attr('id'));
     });
 
     // add attributes to the list of options
     $list.attr('id', 'account-lead-lookup--search-results');
     $list.attr('role', 'listbox');
     $list.attr('aria-busy', 'true');
+    $list.attr('aria-label', 'Departments');
 
     $select.on('chosen:showing_dropdown', () => {
         $input.attr('aria-expanded', 'true');

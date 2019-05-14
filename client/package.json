@@ -1,25 +1,24 @@
 {
   "name": "account-lead-lookup",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "CDT website's Account Lead Lookup tool",
   "main": "account-lead-lookup.js",
   "scripts": {
     "clean": "rimraf dist",
-    "start": "env-cmd .env.dev parcel index.html -p 3000 --https",
-    "start:prod": "env-cmd .env.prod parcel index.html -p 3000 --https",
-    "build": "cross-env npm run clean && env-cmd .env.dev parcel build index.html && npm run remove-hash",
-    "build:prod": "cross-env npm run clean && env-cmd .env.prod parcel build index.html && npm run remove-hash",
+    "start": "env-cmd -f .env.dev parcel ./src/index.html -p 3000 --https",
+    "start:prod": "env-cmd -f .env.prod parcel ./src/index.html -p 3000 --https",
+    "build": "cross-env npm run clean && env-cmd -f .env.dev parcel build ./src/index.html --no-source-maps && bpa-azure remove-hash",
+    "build:prod": "cross-env npm run clean && env-cmd -f .env.prod parcel build ./src/index.html --no-source-maps && bpa-azure remove-hash",
     "serve": "serve -s dist -p 3000 --ssl",
     "deploy": "cross-env npm run build && bpa-azure deploy",
-    "deploy:prod": "cross-env npm run build:prod && bpa-azure deploy --prod",
-    "remove-hash": "node ./scripts/removeHash.js"
+    "deploy:prod": "cross-env npm run build:prod && bpa-azure deploy --prod"
   },
   "author": "BPA",
   "license": "ISC",
   "devDependencies": {
-    "bpa-azure-test": "0.0.2",
+    "bpa-azure-test": "0.0.4",
     "cross-env": "^5.2.0",
-    "env-cmd": "^8.0.2",
+    "env-cmd": "^9.0.1",
     "parcel-bundler": "^1.12.3",
     "rimraf": "^2.6.3"
   },

@@ -302,6 +302,10 @@
     justify-content: space-evenly;
 }
 
+.account-lead-lookup--content-details *:focus {
+    outline: 1px dotted #333;
+}
+
 .account-lead-lookup--content-details img {
     min-width: 120px;
     min-height: 200px;
