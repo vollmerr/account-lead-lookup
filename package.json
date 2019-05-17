@@ -1,6 +1,6 @@
 {
   "name": "account-lead-lookup",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "CDT website's Account Lead Lookup tool",
   "main": "account-lead-lookup.js",
   "scripts": {
