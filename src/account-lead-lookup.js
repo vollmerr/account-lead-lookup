@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 $dept.text(record.Name);
                 
                 const $img = $('[data-lookup-id=img]');
-                $img.attr('src', src);
+                $img.attr('src', src.replace("http://", "https://"));
                 $img.attr('alt', `Profile picture for ${name}`);
                 
                 const $name = $('[data-lookup-id=name]');
