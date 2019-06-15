@@ -22,7 +22,7 @@ For running locally, this project makes use of [serve](https://github.com/zeit/s
 ### html
 To deploy the html to the wordpress environment, open a ticket to the `OCIO ITSM Services/CDT Website Support` group. 
 
-The code indicated in `index.html` surrounded by `INSERT INTO THE HOST SITE` is the code that should be replaced on the CDT site if any changes are needed. Uncomment the dev or prod script and link section that points to the js/css files in Azure Blob Storage. For example, the section under the `UNCOMMENT FOR DEPLOYING IN PROD` comment.
+The code indicated in `index.html` surrounded by `INSERT INTO THE HOST SITE` is the code that should be replaced on the CDT site if any changes are needed. Uncomment the section surrounded by the `UNCOMMENT FOR DEPLOYING` comment.
 
 ### javascript + css
 This project uses the `bpa-azure` package for deploying to Azure Blob Storage, which relies on environment variables being set. 

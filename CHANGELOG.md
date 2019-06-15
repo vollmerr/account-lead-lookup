@@ -1,8 +1,9 @@
 # account-lead-lookup - Change Log
 
-## v0.0.6 (2019-06-14)
+## v0.0.6
 - use bpa-azure instead of bpa-azure-test
 - remove passing .env files to `bpa-azure` (handled in bpa-azure)
+- update wordpress html (dynamically gets dev or prod resources)
 
 ## v0.0.5 (2019-05-21) CK
 - Convert http image links from CPRO to https

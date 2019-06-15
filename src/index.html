@@ -57,19 +57,6 @@
 
 
 <!-- INSERT INTO THE HOST SITE -->
-
-    <!-- UNCOMMENT THE SCRIPTS BELOW WHEN INSERTING IN THE HOST SITE -->
-
-    <!-- UNCOMMENT FOR DEPLOYING IN DEV -->
-    <!-- <link rel='stylesheet' href='https://sacdtalld001.blob.core.windows.net/account-lead-lookup/account-lead-lookup.css' type='text/css' media='all' />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
-    <script src="https://sacdtalld001.blob.core.windows.net/account-lead-lookup/account-lead-lookup.js"></script> -->
-
-    <!-- UNCOMMENT FOR DEPLOYING IN PROD -->
-    <!-- <link rel='stylesheet' href='https://sacdtallp001.blob.core.windows.net/account-lead-lookup/account-lead-lookup.css' type='text/css' media='all' />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
-    <script src="https://sacdtallp001.blob.core.windows.net/account-lead-lookup/account-lead-lookup.js"></script> -->
-
     <div id="account-lead-lookup">
         <div id="account-lead-lookup--search">
             <select aria-label="Select a Department" data-placeholder="Select a Department..." class="chosen-select" aria-hidden="true">
@@ -107,6 +94,30 @@
             </div>
         </div>
     </div>
+    <div id="all-scripts"></div>
+
+    <!-- UNCOMMENT FOR DEPLOYING -->
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <script>
+        // public previews of wordpress draft's have 'preview' search query set, if set use dev            
+        var domain = window.location.search && window.location.search.match('preview')
+            ? 'sacdtalld001'
+            : 'sacdtallp001';
+        
+        var url = 'https://' + domain + '.blob.core.windows.net/account-lead-lookup';
+        
+        var stylesheet = document.createElement('link');
+        stylesheet.href = url + '/account-lead-lookup.css';
+        stylesheet.rel = 'stylesheet';
+        document.querySelector('#all-scripts').appendChild(stylesheet);
+        
+        var js = document.createElement('script');
+        js.src = url + '/account-lead-lookup.js';
+        document.querySelector('#all-scripts').appendChild(js);
+    </script> -->
+    
+    <!-- END UNCOMMENT FOR DEPLOYING -->
 
 <!-- END INSERT INTO THE HOST SITE -->
 
