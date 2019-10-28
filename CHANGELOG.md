@@ -1,6 +1,8 @@
 # account-lead-lookup - Change Log
 
 ## v0.0.6
+- update dependency versions
+- remove `serve` command, as ssl is no longer supported
 - use bpa-azure instead of bpa-azure-test
 - remove passing .env files to `bpa-azure` (handled in bpa-azure)
 - update wordpress html (dynamically gets dev or prod resources)

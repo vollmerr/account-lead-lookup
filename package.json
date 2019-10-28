@@ -9,7 +9,6 @@
     "start:prod": "env-cmd -f .env.prod parcel ./src/index.html -p 3000 --https",
     "build": "cross-env npm run clean && env-cmd -f .env.dev parcel build ./src/index.html --no-source-maps && env-cmd -f .env.dev bpa-azure remove-hash",
     "build:prod": "cross-env npm run clean && env-cmd -f .env.prod parcel build ./src/index.html --no-source-maps && env-cmd -f .env.prod bpa-azure remove-hash",
-    "serve": "serve -s dist -p 3000 --ssl",
     "deploy": "cross-env npm run build && bpa-azure deploy",
     "deploy:prod": "cross-env npm run build:prod && bpa-azure deploy --prod"
   },
@@ -17,10 +16,10 @@
   "license": "ISC",
   "devDependencies": {
     "bpa-azure": "0.0.5",
-    "cross-env": "5.2.0",
-    "env-cmd": "9.0.3",
-    "parcel-bundler": "1.12.3",
-    "rimraf": "2.6.3"
+    "cross-env": "6.0.3",
+    "env-cmd": "10.0.1",
+    "parcel-bundler": "1.12.4",
+    "rimraf": "3.0.0"
   },
   "dependencies": {
     "whatwg-fetch": "3.0.0"
